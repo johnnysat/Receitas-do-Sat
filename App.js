@@ -1,15 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {  } from 'react-native';
+import { Routes } from './src/routes/index'
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-    
-    </View>
+    <NavigationContainer>
+      <Routes/>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container:{
-
-  }
-})
