@@ -8,9 +8,19 @@ const Tab = createBottomTabNavigator();
 
 export function Routes() {
   return (
-  <Tab.Navigator>
-    <Tab.Screen name="HomeTab" component={Home} />
-    <Tab.Screen name="FavoritesTab" component={Favorites} />
+  <Tab.Navigator
+    screenOptions={{
+      headerShown: false,
+      tabBarHideOnKeyboard: true,
+      tabBarShowLabel: false,
+      tabBarActiveTintColor: '#000000',
+
+      tabBarStyle:{
+        backgroundColor: "#fff"
+      }
+    }}>
+    <Tab.Screen name="Receitas do Sat" component={Home} />
+    <Tab.Screen name="Minhas Favoritas" component={Favorites} />
   </Tab.Navigator>
   )
 }
