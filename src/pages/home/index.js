@@ -5,6 +5,8 @@ export function Home() {
   return(
   <SafeAreaView style={styles.container}>
     <Logo />
+    <Text style={styles.title}>Encontre a receita </Text>
+    <Text style={styles.title}>que combina com você </Text>
   </SafeAreaView>
   )
 }
@@ -16,5 +18,10 @@ const styles = StyleSheet.create({
     paddingTop: 36,
     paddingStart: 14,
     paddingEnd: 14,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: "#0e0e0e",
   }
 })
