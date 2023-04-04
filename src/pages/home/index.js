@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import { Logo } from '../../components/logo';
 
 export function Home() {
   return(
   <SafeAreaView style={styles.container}>
-    
+    <Logo />
   </SafeAreaView>
   )
 }
