@@ -10,6 +10,13 @@ export function Logo () {
 
 const styles = StyleSheet.create({
   logoArea: {
-    backgroundColor: '#4CBE6C'
+    backgroundColor: '#4CBE6C',
+    alignSelf: "flex-start",
+    padding: 8,
+    paddingLeft: 16,
+    paddingRight: 16,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 32,
   }
 })
