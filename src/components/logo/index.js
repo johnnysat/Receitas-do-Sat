@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 8,
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 32,
+    marginBottom: 8,
   },
   logo:{
     fontSize: 18,
