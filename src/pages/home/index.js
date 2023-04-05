@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     borderWidth: 1,
     borderColor: "#ECECEC",
-    paddingLef: 8,
-    paddingRig: 8,
+    paddingLeft: 8,
+    paddingRight: 8,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -53,6 +53,5 @@ const styles = StyleSheet.create({
     width: '90%',
     maxWidth: '90%',
     height: 54,
-    paddingLeft: 10,
   }
 })
