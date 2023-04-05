@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
+import { Ionicons } from "@expo/vector-icons"
 import { Logo } from '../../components/logo';
 
 export function Home() {
@@ -7,6 +8,16 @@ export function Home() {
     <Logo />
     <Text style={styles.title}>Encontre a receita </Text>
     <Text style={styles.title}>que combina com você </Text>
+
+    <View style={styles.form}>
+      <TextInput 
+      placeholder="Digite o nome da receita..." 
+      style={styles.input}
+      />
+      <TouchableOpacity>
+        <Ionicons name="search" size={28} color="#4CBE6C" />
+      </TouchableOpacity>
+    </View>
   </SafeAreaView>
   )
 }
@@ -23,5 +34,25 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: 'bold',
     color: "#0e0e0e",
+  },
+  form: {
+    backgroundColor: '#FFF',
+    width: '100%',
+    borderRadius: 8,
+    marginTop: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: "#ECECEC",
+    paddingLef: 8,
+    paddingRig: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  input:{
+    width: '90%',
+    maxWidth: '90%',
+    height: 54,
+    paddingLeft: 10,
   }
 })
