@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
 import { Ionicons } from "@expo/vector-icons"
 import { Logo } from '../../components/logo';
 
 export function Home() {
+  const [inputValue, setInputValue] = useState()
 
   handleSearch =() => {
     console.log('clicou')
