@@ -3,6 +3,11 @@ import { Ionicons } from "@expo/vector-icons"
 import { Logo } from '../../components/logo';
 
 export function Home() {
+
+  handleSearch =() => {
+    console.log('clicou')
+  }
+
   return(
   <SafeAreaView style={styles.container}>
     <Logo />
@@ -14,7 +19,7 @@ export function Home() {
       placeholder="Digite o nome da receita..." 
       style={styles.input}
       />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleSearch}>
         <Ionicons name="search" size={28} color="#4CBE6C" />
       </TouchableOpacity>
     </View>
