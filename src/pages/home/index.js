@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity, FlatList, } from 'react-native';
 import { Ionicons } from "@expo/vector-icons"
 import { Logo } from '../../components/logo';
 import api from '../../services/api';
