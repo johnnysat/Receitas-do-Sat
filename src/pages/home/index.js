@@ -45,7 +45,7 @@ export function Home() {
     <FlatList 
       data={foods}
       keyExtractor={(item)=> String(item.id)}
-      renderItem={({item}) => <FoodList/>}
+      renderItem={({item}) => <FoodList data={item}/>}
     />
 
   </SafeAreaView>
