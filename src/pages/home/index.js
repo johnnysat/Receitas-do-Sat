@@ -27,7 +27,7 @@ export function Home() {
   return(
   <SafeAreaView style={styles.container}>
     <Logo />
-    <Text style={styles.title}>Apenas as melhores receitas</Text>
+    <Text style={styles.title}>As melhores receitas</Text>
     <Text style={styles.title}>para matar a sua fome</Text>
 
     <View style={styles.form}>
