@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity, FlatList, } from 'react-native';
 import { Ionicons } from "@expo/vector-icons"
 import { Logo } from '../../components/logo';
+import { FoodList } from '../../components/foodlist';
 import api from '../../services/api';
+
 
 export function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -43,7 +45,7 @@ export function Home() {
     <FlatList 
       data={foods}
       keyExtractor={(item)=> String(item.id)}
-      renderItem={({item}) => <Text>{item.name}</Text>}
+      renderItem={({item}) => <FoodList/>}
     />
 
   </SafeAreaView>
