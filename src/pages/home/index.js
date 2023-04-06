@@ -1,10 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
 import { Ionicons } from "@expo/vector-icons"
 import { Logo } from '../../components/logo';
+import api from '../../services/api';
 
 export function Home() {
   const [inputValue, setInputValue] = useState("")
+
+  useEffect(()=> {
+    fetchApi = () => {
+      const response = api.get("")
+    };
+
+    fetchApi();
+
+  },[])
 
   handleSearch =() => {
     console.log(`'Você digitou:' ${inputValue}`)
