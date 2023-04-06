@@ -8,8 +8,9 @@ export function Home() {
   const [inputValue, setInputValue] = useState("")
 
   useEffect(()=> {
-    fetchApi = () => {
-      const response = api.get("")
+    const fetchApi = async () => {
+      const response = await api.get("/foods")
+      console.log(response.data)
     };
 
     fetchApi();
