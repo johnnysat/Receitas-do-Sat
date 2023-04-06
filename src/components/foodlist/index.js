@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
 
 export function FoodList({ data }) {
   return(
@@ -10,8 +11,11 @@ export function FoodList({ data }) {
       <View style={styles.info}>
         <Text style={styles.name}>{data.name}</Text>
         <Text style={styles.about}>{data.total_ingredients} Ingredientes | {data.time} Min</Text>
-        <Text></Text>
       </View>
+      <LinearGradient 
+        style={styles.gradient}
+        colors={['transparent', 'rgba(0, 0, 0, 0.70)', 'rgba(0, 0, 0, 0.95)']}
+      />
     </TouchableOpacity>
   )
 }
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
   },
   info: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 14,
     left: 14,
     zIndex: 99,
   },
@@ -38,5 +42,15 @@ const styles = StyleSheet.create({
   },
   about: {
     color: '#fff',
+  },
+  gradient: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: '55%',
+    borderRadius: 14,
+    zIndex: 1,
+    backgroundColor: 'transparent'
   }
 })
