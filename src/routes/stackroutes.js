@@ -8,10 +8,16 @@ const Stack = createNativeStackNavigator();
 
 export function StackRoutes() {
   return(
-    <StackNavigator>
-      <Stack.Screen name="home" component={Home}/>
+    <Stack.Navigator>
+      <Stack.Screen 
+      name="home" 
+      component={Home}
+      options={{
+        headerShown: false,
+      }}
+      />
       <Stack.Screen name="detail" component={Detail}/>
       <Stack.Screen name="search" component={Search}/>
-    </StackNavigator>
+    </Stack.Navigator>
   )
 }
