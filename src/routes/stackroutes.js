@@ -17,14 +17,14 @@ export function StackRoutes() {
         }}
       />
       <Stack.Screen
-        name="detail"
+        name="Detail"
         component={Detail}
         options={{
           title: "Detalhes da Receita"
         }}
       />
       <Stack.Screen
-        name="search"
+        name="Search"
         component={Search}
         options={{
           title: "Veja o que encontramos"
