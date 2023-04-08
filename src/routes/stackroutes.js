@@ -7,28 +7,28 @@ import { Search } from '../pages/search'
 const Stack = createNativeStackNavigator();
 
 export function StackRoutes() {
-  return(
+  return (
     <Stack.Navigator>
-      <Stack.Screen 
-      name="home" 
-      component={Home}
-      options={{
-        headerShown: false,
-      }}
+      <Stack.Screen
+        name="home"
+        component={Home}
+        options={{
+          headerShown: false,
+        }}
       />
-      <Stack.Screen 
-      name="detail" 
-      component={Detail}
-      options={{
-        title: "Detalhes da Receita"
-      }}
+      <Stack.Screen
+        name="detail"
+        component={Detail}
+        options={{
+          title: "Detalhes da Receita"
+        }}
       />
-      <Stack.Screen 
-      name="search" 
-      component={Search}
-      options={{
-        title: "Veja o que encontramos"
-      }}
+      <Stack.Screen
+        name="search"
+        component={Search}
+        options={{
+          title: "Veja o que encontramos"
+        }}
       />
     </Stack.Navigator>
   )
