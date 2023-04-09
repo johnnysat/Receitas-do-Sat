@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
+import { Entypo } from '@expo/vector-icons'
 
 export function Detail() {
   const route= useRoute() 
@@ -8,7 +9,16 @@ export function Detail() {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: route.params?.data ? route.params?.data.name : "Detalhes da Receita"
+      title: route.params?.data ? route.params?.data.name : "Detalhes da Receita",
+      headerRight: () => (
+        <Pressable onPress={() => console.log('testando')}>
+          <Entypo 
+          name="heart"
+          size={28}
+          color="#FF4141"
+          />
+        </Pressable>
+      )
     })
   }, [navigation, route.params?.data])
 
