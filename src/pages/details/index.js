@@ -33,6 +33,14 @@ export function Detail() {
         style={styles.image}
       />
     </Pressable>
+
+    <View style={styles.headerDetails}>
+      <Text>{route.params?.data.name}</Text>
+      <Text>Igrendientes: {route.params?.data.total_ingredients}</Text>
+
+    </View>
+
+
   </ScrollView>
   )
 }
@@ -55,6 +63,6 @@ const styles = StyleSheet.create({
     top: 0, right: 0, bottom: 0, left: 0,
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
 
 })
