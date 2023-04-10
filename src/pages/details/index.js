@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ScrollView, Image } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { Entypo } from '@expo/vector-icons'
 
@@ -23,15 +23,28 @@ export function Detail() {
   }, [navigation, route.params?.data])
 
   return(
-  <View style={styles.container}>
-    <Text>Página Details!</Text>
-    <Text>{route.params?.data.name}</Text>
-  </View>
+  <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <Pressable>
+      <Image 
+        source={{uri: route.params.data.cover}}
+        style={styles.image}
+      />
+    </Pressable>
+  </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
+    backgroundColor: '#F3F9FF',
+    paddingTop: 14,
+    paddingEnd: 14,
+    paddingStart: 14,
+  },
+  image: {
+    height: 200,
+    borderRadius: 14,
+    width: '100%',
   }
+
 })
