@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet, Pressable, ScrollView, Image } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
-import { Entypo } from '@expo/vector-icons'
+import { Entypo, AntDesign } from '@expo/vector-icons'
 
 export function Detail() {
   const route= useRoute() 
@@ -25,6 +25,9 @@ export function Detail() {
   return(
   <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
     <Pressable>
+      <View style={styles.playIcon}>
+        <AntDesign name={'playcircleo'} size={80} color="#FAFAFA" />
+      </View>
       <Image 
         source={{uri: route.params.data.cover}}
         style={styles.image}
@@ -45,6 +48,13 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 14,
     width: '100%',
+  },
+  playIcon: {
+    position: 'absolute',
+    zIndex: 9,
+    top: 0, right: 0, bottom: 0, left: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 
 })
