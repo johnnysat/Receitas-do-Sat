@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet, Pressable, ScrollView, Image } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
-import { Entypo, AntDesign } from '@expo/vector-icons'
+import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
 
 export function Detail() {
   const route= useRoute() 
@@ -40,6 +40,9 @@ export function Detail() {
       <Text>Tempo Estimado: {route.params?.data.time} Minutos</Text>
     </View>
 
+    <Pressable>
+      <Feather name="share-2" size={24} color={'#121212'} />
+    </Pressable>
 
   </ScrollView>
   )
