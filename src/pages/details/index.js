@@ -36,7 +36,7 @@ export function Detail() {
 
     <View style={styles.headerDetails}>
       <Text>{route.params?.data.name}</Text>
-      <Text>Portções: {route.params?.data.total_ingredients}</Text>
+      <Text>Ingredientes: {route.params?.data.total_ingredients}</Text>
       <Text>Tempo Estimado: {route.params?.data.time} Minutos</Text>
     </View>
 
