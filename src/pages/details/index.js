@@ -80,7 +80,9 @@ const styles = StyleSheet.create({
   },
   headerDetails: {
     flexDirection: 'row',
-
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 14,
   }
 
 
