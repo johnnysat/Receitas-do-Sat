@@ -35,7 +35,7 @@ export function Detail() {
     </Pressable>
 
     <View style={styles.headerDetails}>
-      <Text>{route.params?.data.name}</Text>
+      <Text style={styles.title}>{route.params?.data.name}</Text>
       <Text>Ingredientes: {route.params?.data.total_ingredients}</Text>
       <Text>Tempo Estimado: {route.params?.data.time} Minutos</Text>
     </View>
@@ -64,5 +64,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 14,
+    color: "#000",
+    marginBottom: 4,
+  }
 
 })
