@@ -36,7 +36,7 @@ export function Detail() {
 
     <View style={styles.headerDetails}>
       <Text style={styles.title}>{route.params?.data.name}</Text>
-      <Text>Ingredientes: {route.params?.data.total_ingredients}</Text>
+      <Text style={styles.ingredientsText}>Ingredientes: {route.params?.data.total_ingredients}</Text>
       <Text>Tempo Estimado: {route.params?.data.time} Minutos</Text>
     </View>
 
@@ -70,6 +70,11 @@ const styles = StyleSheet.create({
     marginTop: 14,
     color: "#000",
     marginBottom: 4,
+  },
+  ingredientsText: {
+    fontSize: 16,
+    marginBottom: 14,
   }
+
 
 })
