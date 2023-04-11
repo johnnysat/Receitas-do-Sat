@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
 
-export function Ingredients() {
+export function Ingredients({ data }) {
   return(
     <View style={styles.container}>
-      <Text style={styles.ingredientName}>Massa de Pizza</Text>
-      <Text>100mg</Text>
+      <Text style={styles.ingredientName}>{data.name}</Text>
+      <Text>{data.amount}</Text>
 
     </View>
   )

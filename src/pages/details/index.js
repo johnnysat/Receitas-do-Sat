@@ -47,7 +47,9 @@ export function Detail() {
         </Pressable>
       </View>
 
-      <Ingredients />
+      {route.params.data.ingredients.map((item) => (
+        <Ingredients key={item.id} data={item} />
+      ))}
 
     </ScrollView>
   )
