@@ -4,7 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native'
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
 
 export function Detail() {
-  const route= useRoute() 
+  const route = useRoute()
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -12,39 +12,39 @@ export function Detail() {
       title: route.params?.data ? route.params?.data.name : "Detalhes da Receita",
       headerRight: () => (
         <Pressable onPress={() => console.log('testando')}>
-          <Entypo 
-          name="heart"
-          size={28}
-          color="#FF4141"
+          <Entypo
+            name="heart"
+            size={28}
+            color="#FF4141"
           />
         </Pressable>
       )
     })
   }, [navigation, route.params?.data])
 
-  return(
-  <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-    <Pressable>
-      <View style={styles.playIcon}>
-        <AntDesign name={'playcircleo'} size={80} color="#FAFAFA" />
+  return (
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      <Pressable>
+        <View style={styles.playIcon}>
+          <AntDesign name={'playcircleo'} size={80} color="#FAFAFA" />
+        </View>
+        <Image
+          source={{ uri: route.params.data.cover }}
+          style={styles.image}
+        />
+      </Pressable>
+
+      <View style={styles.headerDetails}>
+        <View>
+          <Text style={styles.title}>{route.params?.data.name}</Text>
+          <Text style={styles.ingredientsText}>Ingredientes: {route.params?.data.total_ingredients}</Text>
+        </View>
+        <Pressable>
+          <Feather name="share-2" size={24} color={'#121212'} />
+        </Pressable>
       </View>
-      <Image 
-        source={{uri: route.params.data.cover}}
-        style={styles.image}
-      />
-    </Pressable>
 
-    <View style={styles.headerDetails}>
-      <Text style={styles.title}>{route.params?.data.name}</Text>
-      <Text style={styles.ingredientsText}>Ingredientes: {route.params?.data.total_ingredients}</Text>
-      <Text>Tempo Estimado: {route.params?.data.time} Minutos</Text>
-    </View>
-
-    <Pressable>
-      <Feather name="share-2" size={24} color={'#121212'} />
-    </Pressable>
-
-  </ScrollView>
+    </ScrollView>
   )
 }
 
@@ -77,6 +77,10 @@ const styles = StyleSheet.create({
   ingredientsText: {
     fontSize: 16,
     marginBottom: 14,
+  },
+  headerDetails: {
+    flexDirection: 'row',
+
   }
 
 
