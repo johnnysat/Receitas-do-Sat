@@ -43,7 +43,7 @@ export function Detail() {
           <Text style={styles.ingredientsText}>Ingredientes: {route.params?.data.total_ingredients}</Text>
         </View>
         <Pressable>
-          <Feather name="share-2" size={22} color={'#121212'} />
+          <Feather name="share-2" size={24} color={'#121212'} />
         </Pressable>
       </View>
 
