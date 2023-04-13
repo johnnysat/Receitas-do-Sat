@@ -59,6 +59,9 @@ export function Detail() {
         color={'#fff'}
         />
       </View>
+      {route.params.data.instructions.map((item, index) => (
+        <Instructions key={item.id} data={item} index={index} />
+      ))}
 
     </ScrollView>
   )
