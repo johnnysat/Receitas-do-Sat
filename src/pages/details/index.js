@@ -1,9 +1,10 @@
 import { useLayoutEffect } from 'react';
-import { View, Text, StyleSheet, Pressable, ScrollView, Image } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ScrollView, Image, Modal } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
 import { Ingredients } from '../../components/ingredients'
 import { Instructions } from '../../components/instructions'
+import { VideoView } from '../../components/video';
 
 
 export function Detail() {
@@ -25,9 +26,13 @@ export function Detail() {
     })
   }, [navigation, route.params?.data])
 
+  function handleOpenVideo(){
+    console.log('teste')
+  }
+
   return (
     <ScrollView contentContainerStyle={{paddingBottom: 20}} style={styles.container} showsVerticalScrollIndicator={false}>
-      <Pressable>
+      <Pressable onPress={handleOpenVideo}>
         <View style={styles.playIcon}>
           <AntDesign name={'playcircleo'} size={80} color="#FAFAFA" />
         </View>
@@ -62,6 +67,10 @@ export function Detail() {
       {route.params.data.instructions.map((item, index) => (
         <Instructions key={item.id} data={item} index={index} />
       ))}
+
+      <Modal>
+        <VideoView />
+      </Modal>
 
     </ScrollView>
   )
