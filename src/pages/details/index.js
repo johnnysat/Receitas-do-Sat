@@ -27,7 +27,7 @@ export function Detail() {
   }, [navigation, route.params?.data])
 
   function handleOpenVideo(){
-    console.log('teste1')
+    console.log('teste')
   }
 
   return (
