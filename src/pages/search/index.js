@@ -3,7 +3,7 @@ import { View, Text, StyleSheet} from 'react-native';
 export function Search() {
   return(
   <View style={styles.container}>
-    <Text>Página Search!</Text>
+    <Text>Página de Pesquisa!</Text>
   </View>
   )
 }
