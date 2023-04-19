@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { WebView } from 'react-native-webview';
 
 export function VideoView( {handleClose, videoUrl} ) {
   return(
@@ -8,6 +9,11 @@ export function VideoView( {handleClose, videoUrl} ) {
         <Feather name="arrow-left" size={24} color="#FFF" />
         <Text style={styles.returnText}>Voltar</Text>
       </TouchableOpacity>
+
+      <WebView 
+      style={styles.contentView}
+      source={{ uri: videoUrl }}
+      />
     </SafeAreaView>
   )
 }
@@ -30,5 +36,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 500,
     marginLeft: 14,
+  },
+  contentView: {
+    flex: 1,
+    width: '100%',
   }
 })

@@ -10,7 +10,7 @@ import { VideoView } from '../../components/video';
 export function Detail() {
   const route = useRoute()
   const navigation = useNavigation();
-  const [showVideo, setShowVideo] = useState(true);
+  const [showVideo, setShowVideo] = useState(false);
 
   useLayoutEffect(() => {
     navigation.setOptions({
