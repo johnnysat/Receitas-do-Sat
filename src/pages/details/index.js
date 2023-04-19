@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { View, Text, StyleSheet, Pressable, ScrollView, Image, Modal } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
@@ -10,6 +10,7 @@ import { VideoView } from '../../components/video';
 export function Detail() {
   const route = useRoute()
   const navigation = useNavigation();
+  const [showVideo, setShowVideo] = useState(true);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -68,8 +69,11 @@ export function Detail() {
         <Instructions key={item.id} data={item} index={index} />
       ))}
 
-      <Modal>
-        <VideoView />
+      <Modal visible={showVideo} animationType='slide'>
+        <VideoView 
+          handleClose={() => setShowVideo(false)}
+          videoUrl={route.params?.data.video}
+        />
       </Modal>
 
     </ScrollView>
