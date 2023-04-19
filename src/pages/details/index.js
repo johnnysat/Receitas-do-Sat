@@ -28,7 +28,7 @@ export function Detail() {
   }, [navigation, route.params?.data])
 
   function handleOpenVideo(){
-    console.log('teste')
+    setShowVideo(true);
   }
 
   return (
@@ -71,7 +71,7 @@ export function Detail() {
 
       <Modal visible={showVideo} animationType='slide'>
         <VideoView 
-          handleClose={() => setShowVideo(false)}
+          handleClose={ () => setShowVideo(false) }
           videoUrl={route.params?.data.video}
         />
       </Modal>
