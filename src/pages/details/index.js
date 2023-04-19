@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from 'react';
-import { View, Text, StyleSheet, Pressable, ScrollView, Image, Modal } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ScrollView, Image, Modal, Share } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
 import { Ingredients } from '../../components/ingredients'
@@ -31,6 +31,17 @@ export function Detail() {
     setShowVideo(true);
   }
 
+  async function shareDetails(){
+    try{
+      await Share.share({
+        url: "google.com",
+        message: `Receita: ${route.params.data.name}\nIngredientes: ${route.params.data.total_ingredients}\nVi lá no app Receitas do Sat!`
+      })
+    } catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <ScrollView contentContainerStyle={{paddingBottom: 20}} style={styles.container} showsVerticalScrollIndicator={false}>
       <Pressable onPress={handleOpenVideo}>
@@ -48,7 +59,7 @@ export function Detail() {
           <Text style={styles.title}>{route.params?.data.name}</Text>
           <Text style={styles.ingredientsText}>Ingredientes: {route.params?.data.total_ingredients}</Text>
         </View>
-        <Pressable>
+        <Pressable onPress={shareDetails}>
           <Feather name="share-2" size={24} color={'#121212'} />
         </Pressable>
       </View>
