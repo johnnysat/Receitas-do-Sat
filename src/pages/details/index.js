@@ -16,7 +16,7 @@ export function Detail() {
 
   useLayoutEffect(() => {
 
-    async function getStatusFavorites(){
+    async function getStatusFavorites() {
       const receipeFavorite = await isFavorites(route.params?.data)
       setFavorite(receipeFavorite)
     }
@@ -27,20 +27,20 @@ export function Detail() {
       title: route.params?.data ? route.params?.data.name : "Detalhes da Receita",
       headerRight: () => (
         <Pressable onPress={() => handleFavoriteReceipe(route.params?.data)}>
-          { favorite ? (
-              <Entypo
-                name="heart"
-                size={28}
-                color="#FF4141"
-              />
-          ) :
-          (
+          {favorite ? (
             <Entypo
-              name="heart-outlined"
+              name="heart"
               size={28}
               color="#FF4141"
             />
-        )
+          ) :
+            (
+              <Entypo
+                name="heart-outlined"
+                size={28}
+                color="#FF4141"
+              />
+            )
 
           }
         </Pressable>
@@ -48,33 +48,33 @@ export function Detail() {
     })
   }, [navigation, route.params?.data], favorite)
 
-  async function handleFavoriteReceipe(receipe){
-    if(favorite){
+  async function handleFavoriteReceipe(receipe) {
+    if (favorite) {
       await removeFavorites(receipe.id);
       setFavorite(false);
-    }else{
+    } else {
       await saveFavorites("@appreceitas", receipe)
       setFavorite(true);
     }
   }
 
-  function handleOpenVideo(){
+  function handleOpenVideo() {
     setShowVideo(true);
   }
 
-  async function shareDetails(){
-    try{
+  async function shareDetails() {
+    try {
       await Share.share({
         url: "google.com",
         message: `Receita: ${route.params.data.name}\nIngredientes: ${route.params.data.total_ingredients}\nVi lá no app Receitas do Sat!`
       })
-    } catch(error){
+    } catch (error) {
       console.log(error)
     }
   }
 
   return (
-    <ScrollView contentContainerStyle={{paddingBottom: 20}} style={styles.container} showsVerticalScrollIndicator={false}>
+    <ScrollView contentContainerStyle={{ paddingBottom: 20 }} style={styles.container} showsVerticalScrollIndicator={false}>
       <Pressable onPress={handleOpenVideo}>
         <View style={styles.playIcon}>
           <AntDesign name={'playcircleo'} size={80} color="#FAFAFA" />
@@ -101,10 +101,10 @@ export function Detail() {
 
       <View style={styles.instructionsArea}>
         <Text style={styles.instructionsText}>Modo de Preparo</Text>
-        <Feather 
-        name="arrow-down"
-        size={24}
-        color={'#fff'}
+        <Feather
+          name="arrow-down"
+          size={24}
+          color={'#fff'}
         />
       </View>
       {route.params.data.instructions.map((item, index) => (
@@ -112,8 +112,8 @@ export function Detail() {
       ))}
 
       <Modal visible={showVideo} animationType='slide'>
-        <VideoView 
-          handleClose={ () => setShowVideo(false) }
+        <VideoView
+          handleClose={() => setShowVideo(false)}
           videoUrl={route.params?.data.video}
         />
       </Modal>
