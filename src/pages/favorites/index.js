@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView} from 'react-native';
 export function Favorites() {
   return(
   <SafeAreaView style={styles.container}>
-    <Text>Página Favorites!</Text>
+    <Text style={styles.title}>Minhas Receitas Favoritas!</Text>
   </SafeAreaView>
   )
 }
