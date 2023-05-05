@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import { getFavorites } from '../../utils/storage';
 
 export function Favorites() {
   const [receipes, setReceipes] = useState([]);
+
+  useEffect(() => {
+    async function getReceipes(){
+      const result = await getFavorites("@appreceitas")
+    }
+    getReceipes();
+  }, [])
 
   return(
   <SafeAreaView style={styles.container}>
