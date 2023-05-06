@@ -17,7 +17,7 @@ export function Favorites() {
     <Text style={styles.title}>Minhas Receitas Favoritas!</Text>
 
     {receipes.length === 0 && (
-      <Text>Você ainda não salvou nenhuma receita...</Text>
+      <Text>Você deveria adicionar alguma receita por aqui...</Text>
     )}
   </SafeAreaView>
   )
